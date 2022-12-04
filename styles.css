@@ -1,0 +1,280 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   font-family: variable-font;
+}
+
+body {
+    background-color: hsl(36, 100%, 99%);
+}
+
+#content {
+    padding-left: 175px;
+    padding-right: 175px;
+    margin-bottom: 10em;
+}
+
+.navbar {
+    display: flex;
+    padding-top: 6em;
+    padding-bottom: 2em;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+}
+
+.navbar-logo {
+    width: auto;
+    height: 42px;
+}
+
+.nav-item {
+    margin: 10px;
+    margin-left: 40px;
+    margin-right: 0;
+}
+
+.nav-item > a {
+    text-decoration: none;
+    font-family: variable-font;
+    font-size: large;
+    font-weight: 400;
+}
+
+.nav-item > a:link, a:visited {
+    color: hsl(236, 13%, 42%);
+}
+
+.nav-item > a:hover {
+    color:hsl(5, 85%, 63%);
+}
+
+.content {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.image {
+    grid-area: image;
+}
+
+.image > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.new {
+    grid-area: new;
+    background-color:hsl(240, 100%, 5%);
+    padding: 1.7rem;
+    padding-bottom: 0;
+    display: grid;
+    grid-template-rows: 3rem 1fr 1fr 1fr;
+}
+
+.new-header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: hsl(35, 77%, 62%);
+}
+
+
+.new-content-item {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    color: hsl(36, 100%, 99%);
+}
+
+.new-content-item-header {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.new-content-item-header:hover {
+    color:hsl(35, 77%, 62%);
+}
+
+.new-content-item-content {
+    color:hsl(233, 8%, 79%);
+    line-height: 1.6rem;
+}
+
+
+
+.headline {
+    grid-area: headline;
+    font-size: 3.8rem;
+    font-weight: 800;
+    line-height: 3.65rem;
+}
+
+.readmore {
+    grid-area: readmore;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.readmore-text {
+    color: hsl(236, 13%, 42%);
+    line-height: 1.6rem;
+    margin-bottom: auto;
+}
+
+.readmore-button {
+    width: 14rem;
+    height: 3.5rem;
+    background-color:hsl(5, 85%, 63%);
+    color: hsl(36, 100%, 99%);
+    border: none;
+    font-size: small;
+    font-weight: 600;
+    letter-spacing: 0.5rem;
+    padding: 1rem;
+}
+
+.readmore-button:hover {
+    background-color: hsl(240, 100%, 5%);
+}
+
+.recommendations {
+    display: grid;
+    gap: 2rem;
+    padding-top: 1.5rem;
+}
+
+.rec-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.rec-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    grid-column: 1/2;
+}
+
+.rec-content {
+    grid-column: 2/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rec-number {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: hsl(233, 8%, 79%);
+}
+
+.rec-header {
+    font-weight: 900;
+}
+
+.rec-header:hover {
+    color: hsl(5, 85%, 63%);
+}
+
+.rec-desc {
+    color: hsl(236, 13%, 42%);
+    line-height: 1.6em;
+}
+
+.attribution {
+    background-color: rgb(213, 213, 213);
+    padding: 5rem;
+}
+
+@media screen and (max-width : 11200px) {
+    #content {
+        padding-left: 175px;
+        padding-right: 175px;
+    }
+    .content {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 0.5fr;
+
+        grid-template-areas:
+            "image      image       new"
+            "headline   readmore    new";
+    }
+    .recommendations {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .nav-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    #content {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    #content {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+
+        grid-template-areas:
+            "image"
+            "image"
+            "headline"
+            "readmore"
+            "new"
+            "new"
+            "new"
+    }
+    .recommendations {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .nav {
+        display: none;
+    }
+    .nav-menu {
+        display: block;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width : 600px) {
+    #content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@font-face {
+    font-family: variable-font;
+    src: url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+
+
+
